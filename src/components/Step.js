@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import NamingStep from './NamingStep';
-import SettingStep from './SettingStep';
+import NamingStepContainer from '../containers/NamingStepContainer';
+import SettingStepContainer from '../containers/SettingStepContainer';
 import MapStep from './MapStep';
-import GameConfig from './GameConfig';
+import GameConfigContainer from '../containers/GameConfigContainer';
+import IntroStepContainer from '../containers/IntroStepContainer';
 
 export default class Step extends Component {
-  render() {
-    return (<div>
-      <button onClick={(e) => {
-        e.preventDefault();
-        this.props.clickPrevious({stepNow: this.props.step.stepName, stepTo: this.props.step.previousStep});
-      }}>Edellinen</button>
-        {this.props.step.stepName === 'NamingStep' && <NamingStep />}
+  steps() {
+    return (
+      <div className="game-config-container">
+        {this.props.step.stepName === 'IntroStep' && <IntroStepContainer />}
+        {this.props.step.stepName === 'NamingStep' && <NamingStepContainer />}
         {this.props.step.stepName === 'MapStep' && <MapStep />}
-        {this.props.step.stepName === 'SettingStep' && <SettingStep />}
-        {this.props.step.stepName === 'GameConfig' && <GameConfig />}
+        {this.props.step.stepName === 'SettingStep' && <SettingStepContainer />}
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        { this.props.step.stepName !== 'GameConfig' ? this.steps() : <GameConfigContainer /> }
       </div>
     );
   }

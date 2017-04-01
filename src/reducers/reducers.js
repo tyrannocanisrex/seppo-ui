@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { SET_STEP } from '../actions/actions';
+import { SET_STEP, SET_GAME_NAME, SET_GAME_MAP } from '../actions/actions';
 
-let initialStep = { stepName: 'NamingStep', previousStep: 'NamingStep' };
+let initialStep = { stepName: 'IntroStep' };
 
 function step(state = initialStep, action) {
   switch(action.type) {
@@ -17,8 +17,20 @@ function step(state = initialStep, action) {
   }
 }
 
+function game(state = {}, action) {
+  switch(action.type) {
+    case SET_GAME_NAME:
+      return Object.assign({}, state, {name: action.name});
+    case SET_GAME_MAP:
+      return Object.assign({}, state, {map: action.mapType});
+    default:
+      return state;
+  }
+}
+
 const seppoWizard = combineReducers({
-  step
+  step,
+  game
 });
 
 export default seppoWizard;

@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export default class SettingStep extends Component {
   render() {
     return (
-      <div>
+      <div className="step">
         <h3>Luokittele peli</h3>
-        <select>
-          <option selected>Aine</option>
+        <select ref="subject">
+          <option>Aine</option>
           <option>Historia</option>
           <option>Matematiikka</option>
           <option>Yhteiskuntaoppi</option>
@@ -25,22 +25,26 @@ export default class SettingStep extends Component {
           <option>Kuvaamataito</option>
         </select>
 
-        <select>
-          <option selected>Ikä</option>
+        <select ref="age">
+          <option>Ikä</option>
           <option>4-6</option>
           <option>7-9</option>
           <option>10-12</option>
           <option>13-15</option>
         </select>
 
-        <select>
-          <option selected>Kieli</option>
+        <select ref="language">
+          <option>Kieli</option>
           <option>Suomi</option>
           <option>Englanti</option>
           <option>Ruotsi</option>
         </select>
 
         <input type="text" placeholder="Avainsanat" />
+        <button onClick={(e) => {
+          e.preventDefault();
+          this.props.defineGameSettings(this.refs.subject.value, this.refs.age.value, this.refs.language.value);
+        }}>Eteenpäin</button>
       </div>
     )
   }

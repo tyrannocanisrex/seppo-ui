@@ -1,24 +1,114 @@
-.App {
+.logo {
+  width: 100px;
+  margin-top: -5px;
+}
+
+.logocontainer {
+  float: left;
+  margin: 1em;
+}
+
+.navbar {
+  width: 100vw;
+  height: 70px;
+  margin: 0;
+  margin-bottom: 0;
+  border: 0;
+  position: relative;
+  z-index: 2;
+  background-color: #fff !important;
+}
+
+.sidebar-left {
+  z-index: 800;
+  position: absolute;
+  left: 0;
+  padding: 1em;
+  background-color: grey;
+  opacity: 0.5;
+}
+
+.sidebar-right {
+  z-index: 800;
+  position: absolute;
+  right: 0;
+  padding: 1em;
+  background-color: grey;
+  opacity: 0.5;
+}
+
+.sidebar-button {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 1em;
+}
+
+.sidebar-button:hover {
+  cursor: pointer;
+}
+
+.navbar-links {
+  float: right;
+  margin: 1em;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  margin-right: 0.5em;
+  color: black;
+}
+
+.game-config-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 70vw;
+}
+
+.step {
+  text-align: center;
+  margin-top: 2em;
+  border: solid thin grey;
+  box-shadow: 10px 10px 5px #888888;
+  -moz-box-shadow: 10px 10px 5px #888888;
+  -webkit-box-shadow: 10px 10px 5px #888888;
+}
+
+.step input, .step button, .step select {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.intro-step button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 50%;
+  display: block;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.intro-step {
+  height: 400px;
+  margin-top: 2em;
+  border: solid thin grey;
+  box-shadow: 10px 10px 5px #888888;
+  -moz-box-shadow: 10px 10px 5px #888888;
+  -webkit-box-shadow: 10px 10px 5px #888888;
+}
+
+.intro-step .heading {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.step button, .intro-step button {
+  background: #ADD8E6;
   color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  border: none;
 }
