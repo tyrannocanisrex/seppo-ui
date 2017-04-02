@@ -4,7 +4,7 @@ export default class StoryStep extends Component {
   render() {
     return (
       <div className="step">
-        <h3>Määrittele tarina osallistujille</h3>
+        <h3>Kirjoita tarina pelille, tai valitse <a href="#">pankista</a>. (Voit kirjoittaa tarinan myöhemmin asetuksista.)</h3>
         <textarea style={{
           width: '70%',
           height: '150px'
