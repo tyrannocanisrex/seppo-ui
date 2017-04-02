@@ -18,12 +18,12 @@ const mapDispatchToState = (dispatch) => {
     selectLiveMap: (name) => {
       dispatch(setGameName(name));
       dispatch(setGameMap('live'));
-      dispatch(setStep(SetStepper('SettingStep')));
+      dispatch(setStep(SetStepper('StoryStep')));
     },
     selectCustomMap: (name) => {
       dispatch(setGameName(name));
       dispatch(setGameMap('custom'));
-      dispatch(setStep(SetStepper('SettingStep')));
+      dispatch(setStep(SetStepper('StoryStep')));
     }
   };
 };
